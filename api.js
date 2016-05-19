@@ -6,12 +6,14 @@
 	router.route('/lists')
 		.get(getLists)
 		.post(createList)
-		.put(updateList);
+		.put(updateList)
+		.delete(deleteList);
 
 	router.route('/cards/:id?')
 		.get(getCards)
 		.post(createCard)
-		.put(updateCard);
+		.put(updateCard)
+		.delete(deleteCard);
 	
 	router.use(defaultErrorHandler);
 
@@ -51,6 +53,10 @@
 		);
 	}	
 
+	deleteList = function(){
+		
+	}
+	
 	function getCards(req, res, next) {
 
 		db.getCards(req.params.id).then(
@@ -86,6 +92,10 @@
 			}
 		);
 	}	
+	
+	deleteCard = function(){
+		
+	}
 
 	function defaultErrorHandler(err, req, res, next) {
 		

@@ -68,6 +68,12 @@
 			
             vm.getStories();
 		}	
+		
+		vm.removeList = function(list){
+			// unknown
+			dataApi.delete(list)
+		}
+		
 
 	}	
 
